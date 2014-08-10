@@ -50,7 +50,11 @@
                 return;
             }
             document.getElementById('marvinsay').innerHTML = text;
-            setTimeout(type, 80);
+            var timeout = 80;
+            if (current[i] === ' ') {
+                timeout = 20;
+            }
+            setTimeout(type, timeout);
         };
 
 
