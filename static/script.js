@@ -1,8 +1,10 @@
+/* Globals */
 var i = 0,
     has_cursor = false,
     in_progress = false,
     marvin_i = 0,
-    current;
+    current,
+    says;
 
 /* Functions */
 function changeString(){
@@ -27,11 +29,15 @@ function swapCursor(show_cursor){
 
 function type() {
     text = current.slice(0, ++i);
-    console.log(text);
     if (text === current) {
+        in_progress = false;
+        if (marvin_i >= says.length){
+            marvin_i = 0;
+        } else {
+            marvin_i += 1;
+        }
+        i = 0;
         document.getElementById('marvinsay').innerHTML = current;
-        in_progress == false;
-        marvin_i += 1;
         return;
     }
     document.getElementById('marvinsay').innerHTML = text;
@@ -42,20 +48,19 @@ function type() {
 function marvin() {
     if (in_progress == false){
         in_progress = true;
-        if (current==='cursor') {
-            console.log('cursor');
-            //swapCursor(show_cursor=true);
-            has_cursor = true;
-            current = '';
+        if (current === 'cursor') {
+
+            swapCursor(true);
+            setTimeout(function(){
+                swapCursor(false);
+                current = '';
+                marvin_i += 1;
+                in_progress = false;             
+            }, 5000);
         } else {
-            console.log('new say!');
-            console.log(marvin_i);
-            if (has_cursor == true){
-                swapCursor(show_cursor=false);
-                has_cursor = false;
-            }
-            current = says[marvin_i];
+            current = says[marvin_i]
             type();
+            return;
         }
     }
 };
