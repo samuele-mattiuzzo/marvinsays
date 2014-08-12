@@ -1,0 +1,3 @@
+*.pyc
+marvin/
+.DS_Store
