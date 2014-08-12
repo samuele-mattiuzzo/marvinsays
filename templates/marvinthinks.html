@@ -42,10 +42,10 @@
 
         function type() {
             text = current.slice(0, ++i);
-            console.log(text);
             if (text === current) {
-                in_progress == false;
+                in_progress = false;
                 marvin_i += 1;
+                i = 0;
                 document.getElementById('marvinsay').innerHTML = current;
                 return;
             }
@@ -57,7 +57,7 @@
         function marvin() {
             if (in_progress == false){
                 in_progress = true;
-                if (current==='cursor') {
+                if (current === 'cursor') {
                     current = '';
                 } else {
                     current = says[marvin_i]
