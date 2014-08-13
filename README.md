@@ -23,7 +23,7 @@ Create a virtualenv and source it:
 
 Install the requirements:
 ```
-# pip install -r requirements.txt
+(marvin)# pip install -r requirements.txt
 ```
 
 Run foreman
