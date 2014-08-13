@@ -28,36 +28,42 @@ function swapCursor(show_cursor){
 };
 
 function type() {
-    text = current.slice(0, ++i);
-    if (text === current) {
-        in_progress = false;
-        if (marvin_i >= says.length){
-            marvin_i = 0;
-        } else {
-            marvin_i += 1;
+        text = current.slice(0, ++i);
+        if (current === 'cursor' || text === current) {
+            // resets things, set index to next iteration
+            // marks current as '' and type the last word
+            in_progress = false;
+            if (marvin_i >= says.length){
+                marvin_i = 0;
+            } else {
+                marvin_i += 1;
+            }
+            i = 0;
+            if (current !== 'cursor') {
+                document.getElementById('marvinsay').innerHTML = text;
+            } else {
+                document.getElementById('marvinsay').innerHTML = '';
+            }
+            return;
         }
-        i = 0;
-        document.getElementById('marvinsay').innerHTML = current;
-        return;
-    }
-    document.getElementById('marvinsay').innerHTML = text;
-    setTimeout(type, 80);
-};
+        document.getElementById('marvinsay').innerHTML = text;
+        setTimeout(type, 80);
 
+};
 
 function marvin() {
     if (in_progress == false){
         in_progress = true;
         if (current === 'cursor') {
-
             swapCursor(true);
             setTimeout(function(){
                 swapCursor(false);
                 current = '';
                 marvin_i += 1;
-                in_progress = false;             
+                in_progress = false;
             }, 5000);
         } else {
+            swapCursor(false);
             current = says[marvin_i]
             type();
             return;
