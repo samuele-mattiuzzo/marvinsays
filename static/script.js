@@ -7,13 +7,6 @@ var i = 0,
     says;
 
 /* Functions */
-function changeString(){
-    var marvin = document.getElementById('marvinsay');
-    marvin.style.display = 'none';
-    marvin.innerHTML = '';
-    marvin.style.display = 'block';
-}
-
 function swapCursor(show_cursor){
     var marvin = document.getElementById('marvinsay'),
         cursor = document.getElementById('cursor');
@@ -28,21 +21,21 @@ function swapCursor(show_cursor){
 }
 
 function type() {
-        text = (i < current.length) ?
-                current.slice(0, ++i) : current;
-        if (current === 'cursor' || text === current) {
-            // resets things, set index to next iteration
-            // marks current as '' and type the last word
-            in_progress = false;
-            marvin_i = (marvin_i === says.length-1) ? 0 : marvin_i + 1;
-            i = 0;
+    text = (i < current.length) ?
+            current.slice(0, ++i) : current;
+    if (current === 'cursor' || text === current) {
+        // resets things, set index to next iteration
+        // marks current as '' and type the last word
+        in_progress = false;
+        marvin_i = (marvin_i === says.length-1) ? 0 : marvin_i + 1;
+        i = 0;
 
-            to_print = (current !== 'cursor') ? text : '';
-            document.getElementById('marvinsay').innerHTML = to_print;
-            return;
-        }
-        document.getElementById('marvinsay').innerHTML = text;
-        setTimeout(type, 80);
+        to_print = (current !== 'cursor') ? text : '';
+        document.getElementById('marvinsay').innerHTML = to_print;
+        return;
+    }
+    document.getElementById('marvinsay').innerHTML = text;
+    setTimeout(type, 80);
 }
 
 function marvin() {
