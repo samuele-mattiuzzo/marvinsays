@@ -1,29 +1,72 @@
+@import url("http://fonts.googleapis.com/css?family=VT323");
+
+/* box-sizing is not supported by IE */
+html, body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  color: green;
+  height: 100%;
+  font-family: "VT323" monospace;
+  font-size: 100%;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1em;
+  text-transform: uppercase;
+  width: 100%; }
+
 html {
-  background: #111;
-}
+  background: #222222;
+  overflow: hidden;
+  position: relative; }
+  @media (min-width: 37.5em) {
+    html {
+      padding: 2em; } }
+  @media (min-width: 56.25em) {
+    html {
+      padding: 4em; } }
+  @media (min-width: 75em) {
+    html {
+      padding: 6em; } }
 
 body {
-  color: #090;
-  width: 480px;
-  margin: 50px auto;
+  background: black;
+  display: block;
+  overflow: hidden;}
+  @media (min-width: 37.5em) {
+    body {
+      border: 3em solid black;
+      -webkit-border-radius: 3em;
+      -moz-border-radius: 3em;
+      -ms-border-radius: 3em;
+      -o-border-radius: 3em;
+      border-radius: 3em; } }
+  @media (min-width: 56.25em) {
+    body {
+      border-width: 5em; } }
+  @media (min-width: 75em) {
+    body {
+      border-width: 6em; } }
 
-  font-family: Courier New, Courier, monospace;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 16px;
-
-  -webkit-font-smoothing: antialiased;
-}
-
+/* Main actors */
 .cursor {
   display: inline-block;
-  background: #111;
-  margin-left: 49%;
+  background: green;
   -webkit-animation: blink 2s linear 0s infinite;
   -moz-animation: blink 2s linear 0s infinite;
-  -ms-animation: blink 2s linear 0s infinite;
-  -o-animation: blink 2s linear 0s infinite;
-}
+  -o-animation: blink 2s linear 0s infinite;}
+  .cursor:before {
+      content: ">: ";
+      display: block;}
+
+.marvinsay:before {
+      content: ">: ";}
+
+/* Blink (Chrome, Mozilla, Opera) */
 @-webkit-keyframes blink {
   0%   { background: #0a0 }
   47%  { background: #090 }
@@ -40,22 +83,10 @@ body {
   100% { background: #090 }
 }
 
-@-ms-keyframes blink {
-  0%   { background: #0a0 }
-  47%  { background: #090 }
-  50%  { background: #000 }
-  97%  { background: #000 }
-  100% { background: #090 }
-}
-
 @-o-keyframes blink {
   0%   { background: #0a0 }
   47%  { background: #090 }
   50%  { background: #000 }
   97%  { background: #000 }
   100% { background: #090 }
-}
-
-.marvinsay {
-    text-align: center;
 }
