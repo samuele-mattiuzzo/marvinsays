@@ -53,40 +53,29 @@ body {
       border-width: 6em; } }
 
 /* Main actors */
+
+.blink {
+  animation: blink 1s steps(5, start) infinite;
+  -webkit-animation: blink 1s steps(5, start) infinite;
+  -moz-animation: blink 1s steps(5, start) infinite;}
+
 .cursor {
-  display: inline-block;
-  background: green;
-  -webkit-animation: blink 2s linear 0s infinite;
-  -moz-animation: blink 2s linear 0s infinite;
-  -o-animation: blink 2s linear 0s infinite;}
+  display: none;}
   .cursor:before {
-      content: ">: ";
-      display: block;}
+    content: ">: ";}
 
 .marvinsay:before {
-      content: ">: ";}
+  content: ">: ";}
 
 /* Blink (Chrome, Mozilla, Opera) */
+@keyframes blink {
+  to {
+    visibility: hidden; } }
+
 @-webkit-keyframes blink {
-  0%   { background: #0a0 }
-  47%  { background: #090 }
-  50%  { background: #000 }
-  97%  { background: #000 }
-  100% { background: #090 }
-}
+  to {
+    visibility: hidden; } }
 
 @-moz-keyframes blink {
-  0%   { background: #0a0 }
-  47%  { background: #090 }
-  50%  { background: #000 }
-  97%  { background: #000 }
-  100% { background: #090 }
-}
-
-@-o-keyframes blink {
-  0%   { background: #0a0 }
-  47%  { background: #090 }
-  50%  { background: #000 }
-  97%  { background: #000 }
-  100% { background: #090 }
-}
+  to {
+    visibility: hidden; } }
