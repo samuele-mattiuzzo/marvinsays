@@ -33,12 +33,13 @@ html {
     html {
       padding: 6em; } }
 
-body {
+main {
   background: black;
   display: block;
-  overflow: hidden;}
+  overflow: hidden;
+  height: 70%;}
   @media (min-width: 37.5em) {
-    body {
+    main {
       border: 3em solid black;
       -webkit-border-radius: 3em;
       -moz-border-radius: 3em;
@@ -46,14 +47,13 @@ body {
       -o-border-radius: 3em;
       border-radius: 3em; } }
   @media (min-width: 56.25em) {
-    body {
+    main {
       border-width: 5em; } }
   @media (min-width: 75em) {
-    body {
+    main {
       border-width: 6em; } }
 
 /* Main actors */
-
 .blink {
   animation: blink 1s steps(5, start) infinite;
   -webkit-animation: blink 1s steps(5, start) infinite;
