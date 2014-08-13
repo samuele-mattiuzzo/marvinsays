@@ -10,21 +10,22 @@ Marvin is a *support AI*. Marvin is here to assist you.
 ### Setup
 
 Clone the project:
-
-`# git clone https://github.com/samuele-mattiuzzo/marvinsays.git`
+```
+# git clone https://github.com/samuele-mattiuzzo/marvinsays.git`
+```
 
 Create a virtualenv and source it:
-
 ```
 # virtualenv marvin
 # source marvin/bin/activate
 ```
 
 Install the requirements:
+```
+# pip install -r requirements.txt
+```
 
-`# pip install -r requirements.txt`
-
-Launch the browser and hit *localhost:5000*
+Launch the browser and hit `localhost:5000`
 
 *Currently supports Chrome, Firefox and Opera*
 
