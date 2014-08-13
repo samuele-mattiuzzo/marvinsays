@@ -12,6 +12,7 @@ Marvin is a *support AI*. Marvin is here to assist you.
 Clone the project:
 ```
 # git clone https://github.com/samuele-mattiuzzo/marvinsays.git`
+# cd marvinsays
 ```
 
 Create a virtualenv and source it:
@@ -23,6 +24,11 @@ Create a virtualenv and source it:
 Install the requirements:
 ```
 # pip install -r requirements.txt
+```
+
+Run foreman
+```
+(marvin)# foreman start
 ```
 
 Launch the browser and hit `localhost:5000`
