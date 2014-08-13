@@ -26,7 +26,7 @@ Install the requirements:
 (marvin)# pip install -r requirements.txt
 ```
 
-Run foreman
+Run foreman:
 ```
 (marvin)# foreman start
 ```
