@@ -6,6 +6,20 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
+BIOS_LOADING = [
+	'BIOS Version 1.09a (79ET65WW)',
+	'BIOS Date 2006-07-27',
+	'Embedded Controller Version 1.05b',
+	'System-Unit serial number 2007 64UAB1234',
+	'System board serial number 012345',
+	'CPU Type Genuine Intel(R) CPU T2500',
+	'CPU Speed 2.00GHz',
+	'Installed Memory 1024 MB',
+	'UUID 12ee3456-789b12cd-3456-e01234567890',
+	'MAC Address (Internal LAN) 00 00 00 00 00 00'
+]
+
 MARVIN_SAYS = [
 	"Greetings, traveller",
 	"My name is Marvin",
@@ -31,7 +45,7 @@ MARVIN_SAYS = [
 	"cursor",
 	"...",
 	"Sir?",
-	"Knock knock"
+	"Knock knock",
 ]
 
 
@@ -40,5 +54,6 @@ def hello():
 	return render_template(
 		'marvinthinks.html',
 		title='Marvin thinks',
-		marvin_says=MARVIN_SAYS
+		marvin_says=MARVIN_SAYS,
+		bios_loading=BIOS_LOADING
 	)

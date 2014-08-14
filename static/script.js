@@ -3,6 +3,7 @@ var i = 0,
     in_progress = false,
     marvin_i = 0,
     current,
+    has_booted = true,
     says;
 
 /* Functions */
@@ -34,25 +35,35 @@ function type() {
     }
 
     document.getElementById('marvinsay').innerHTML = text;
-    setTimeout(type, 80);
+    setTimeout(type, 90);
 }
 
+function doBoot(){}
+
 function marvin() {
-    if (in_progress === false){
-        if (current === 'cursor') {
-            swapCursor(true);
-            setTimeout(function(){
+
+    // Boot load
+    if ( has_booted === false ) {
+        doBoot();
+        has_booted = true;
+    } else {
+        // Marvin says things
+        if (in_progress === false){
+            if (current === 'cursor') {
+                swapCursor(true);
+                setTimeout(function(){
+                    swapCursor(false);
+                    current = '';
+                    marvin_i = (marvin_i === says.length-1) ? 0 : marvin_i + 1;
+                    in_progress = false;
+                }, 5000);
+            } else {
+                in_progress = true;
                 swapCursor(false);
-                current = '';
-                marvin_i = (marvin_i === says.length-1) ? 0 : marvin_i + 1;
-                in_progress = false;
-            }, 5000);
-        } else {
-            in_progress = true;
-            swapCursor(false);
-            current = says[marvin_i];
-            type();
-            return;
+                current = says[marvin_i];
+                type();
+                return;
+            }
         }
     }
 }
