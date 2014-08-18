@@ -6,6 +6,7 @@ Marvin is a *support AI*. Marvin is here to assist you.
 
 * Python 2.7
 * Virtualenv
+* [Heroku Toolbelt](https://toolbelt.heroku.com/)
 
 ### Setup
 
