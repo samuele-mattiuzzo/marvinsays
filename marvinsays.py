@@ -52,8 +52,8 @@ MARVIN_SAYS = [
 @app.route('/')
 def hello():
 	return render_template(
-		'marvinthinks.html',
-		title='Marvin thinks',
+		'marvinsays.html',
+		title='Marvin',
 		marvin_says=MARVIN_SAYS,
 		bios_loading=BIOS_LOADING
 	)

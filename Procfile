@@ -1,1 +1,1 @@
-web: gunicorn marvinthinks:app --log-file=-
+web: gunicorn marvinsays:app --log-file=-
