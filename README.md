@@ -38,4 +38,4 @@ Launch the browser and hit `localhost:5000`
 
 ### Live
 
-[Marvin thinks on Heroku](http://marvinthinks.herokuapp.com)
+[Marvin says on Heroku](http://marvinsays.herokuapp.com)
