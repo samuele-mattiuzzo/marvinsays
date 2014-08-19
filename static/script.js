@@ -8,12 +8,16 @@
         marvinDiv = document.getElementById('marvinsay'),
         says = JSON.parse(marvinDiv.getAttribute('data-says'));
 
+    function display (display) {
+        return display ? 'none' : 'block';
+    }
+
     /* Functions */
     function swapCursor(show_cursor){
         var cursor = document.getElementById('cursor');
 
-        var marvin_display = (show_cursor === true) ? 'none' : 'block',
-            cursor_display = (show_cursor === false) ? 'none' : 'block';
+        var marvin_display = display(show_cursor),
+            cursor_display = display(!show_cursor);
         
         marvinDiv.style.display = marvin_display;
         cursor.style.display = cursor_display;
